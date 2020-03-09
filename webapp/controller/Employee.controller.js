@@ -13,7 +13,7 @@ sap.ui.define([
 
 		onInit: function () {
 			this.setModel(EmployeeState.getModel(), "EmployeeState");
-			this.showBusyIndicator();
+			
 			
 		},
 
