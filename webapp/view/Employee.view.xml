@@ -1,0 +1,8 @@
+<mvc:View controllerName="be.flexso.ehb.Northwind-Employees.controller.Employee" xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+	xmlns="sap.m" xmlns:f="sap.f" xmlns:ui-integration="sap.ui.integration.widgets" xmlns:card="sap.f.cards" xmlns:grid="sap.ui.layout.cssgrid">
+	<Page id="page" title="{i18n>title}">
+		<content>
+			
+		</content>
+	</Page>
+</mvc:View>

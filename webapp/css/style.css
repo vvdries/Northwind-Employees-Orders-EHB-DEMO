@@ -1,0 +1,19 @@
+/* Enter your custom styles here */
+
+.gridListItem {
+    background: none;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.noBoxShadow {
+    box-shadow: none !important;
+}
+
+.footerImg {
+	float: right;
+}
+
+.sapMPanelContent:not(.sapMPanelBGTransparent) {
+	border: none !important;
+}
