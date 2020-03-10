@@ -4,7 +4,8 @@ sap.ui.define([
 	"sap/ui/model/json/JSONModel",
 	'sap/ui/model/Filter',
 	'sap/ui/model/FilterOperator',
-], function (BaseController, JSONModel, Filter, FilterOperator) {
+	"../../state/EmployeeState",
+], function (BaseController, JSONModel, Filter, FilterOperator, EmployeeState) {
 	"use strict";
 	return BaseController.extend("be.flexso.ehb.Northwind-Employees.controller.fragment.Order", {
 
@@ -28,7 +29,17 @@ sap.ui.define([
 		},
 
 		handleSearch: function (oEvent) {
-			
+			var sValue = oEvent.getParameter("value");
+			var oFilter = new Filter({
+				filters: [
+					new Filter("OrderID", FilterOperator.EQ, sValue), // metadata -> orderid int -> cannot be contains (only string contains)
+					new Filter("ShipName", FilterOperator.Contains, sValue),
+					new Filter("ShipCountry", FilterOperator.Contains, sValue)
+				],
+				and: false
+			});
+			var oBinding = oEvent.getSource().getBinding("items");
+			oBinding.filter([oFilter]);
 		},
 		
 		onOrderSelect: function (oEvent) {

@@ -10,8 +10,10 @@ sap.ui.define([
 			if (data) {
 				// Perform custom actions
 			}
-		}
+		},
+		
+		getOrderId: function () {
+			return this.OrderID;
+		},
 	});
 });
-
-

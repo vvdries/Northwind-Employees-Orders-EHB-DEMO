@@ -13,12 +13,19 @@ sap.ui.define([
 
 		onInit: function () {
 			this.setModel(EmployeeState.getModel(), "EmployeeState");
-			
-			
+			this.showBusyIndicator();
+			var aEmployees = this.getOwnerComponent().getModel("employeeModel").getProperty("/employees");
+			EmployeeState.setEmployees(aEmployees).then(function () {
+				EmployeeState.getEmployeesOrders().then(aEmployeesOrders => {
+					this.hideBusyIndicator();
+				});
+			}.bind(this));
 		},
 
 		onShowOrders: function (oEvent) {
-			
+			EmployeeState.setSelectedEmployee(oEvent.getSource().getBindingContext("EmployeeState").getObject());
+			console.log(EmployeeState.getSelectedEmployee()); //=> remove this just for debugging purpose
+			this.showBusyIndicator();
 			this.openFragment(
 				"Order",
 				this.getView().getModel("EmployeeState"),
@@ -30,7 +37,8 @@ sap.ui.define([
 		},
 
 		showSelectedOrder: function (selectedOrderId) {
-			
+			var resourceBundle = this.getResourceBundle();
+			MessageToast.show(resourceBundle.getText("youSelectedOrderId", [selectedOrderId]));
 		}
 	});
 });

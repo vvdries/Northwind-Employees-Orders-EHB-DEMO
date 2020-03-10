@@ -1,0 +1,23 @@
+{
+	"employees": [{
+		"EmployeeID": 1,
+		"FirstName": "Nico",
+		"LastName": "Deleener",
+		"ImageUrl": "https://media-exp1.licdn.com/dms/image/C5603AQEUdaLF3zfoiA/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=yqGZcxvEv1QB4CURhbCDmsE_Cr_w_Ugb062ZuFUXZhA",
+		"Function": "UI5",
+		"FunctionCode": "Keyboard",
+		"ReportsTo": 6,
+		"Email": "nico.deleener@flexso.com",
+		"NextEvent": "SAPUI5con @ SAP"
+	}, {
+		"EmployeeID": 2,
+		"FirstName": "Dries",
+		"LastName": "Van Vaerenbergh",
+		"ImageUrl": "https://media-exp1.licdn.com/dms/image/C4D03AQEVh_9zMcJ-Kg/profile-displayphoto-shrink_200_200/0?e=1586995200&v=beta&t=NsXAVaTl-eLxoczJ4tG88wiXy-q19xQq2G2V4n0lKAw",
+		"Function": "Internet of Things",
+		"FunctionCode": "World",
+		"ReportsTo": 4,
+		"Email": "dries.vanvaerenbergh@flexso.com",
+		"NextEvent": "SAP Inside Track Belgium"
+	}]
+}

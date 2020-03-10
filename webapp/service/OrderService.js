@@ -15,6 +15,13 @@ sap.ui.define([
 
 		getEmployeesOrders: function (employeeId) {
 			
+			var sObjectPath = this.model.createKey("/Employees", { EmployeeID: employeeId});
+			
+			var oParams = {
+				"$expand": "Orders"
+			};
+			
+			return this.odata(this.model, sObjectPath, "read", false, oParams);
 		}
 
 	});

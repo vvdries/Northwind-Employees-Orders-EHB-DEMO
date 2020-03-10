@@ -2,7 +2,41 @@
 	xmlns="sap.m" xmlns:f="sap.f" xmlns:ui-integration="sap.ui.integration.widgets" xmlns:card="sap.f.cards" xmlns:grid="sap.ui.layout.cssgrid">
 	<Page id="page" title="{i18n>title}">
 		<content>
-			
+			<Panel>
+				<f:GridList items="{ path : 'EmployeeState>/aEmployees', sorter : [ { path : 'FirstName' }, { path : 'LastName' } ] }" class="noBoxShadow">
+					<f:customLayout>
+						<grid:GridBoxLayout boxMinWidth="20rem"/>
+					</f:customLayout>
+					<f:GridListItem class="gridListItem sapUiSmallMargin">
+						<FlexBox alignItems="Center" justifyContent="Center">
+							<items>
+								<f:Card width="20rem">
+									<f:header>
+										<card:Header title="{EmployeeState>FirstName} {EmployeeState>LastName}"
+											subtitle="{EmployeeState>Function} { path: 'EmployeeState>FunctionCode' , formatter: '.formatter.getFunctionIcon' }"
+											iconSrc="{EmployeeState>ImageUrl}"/>
+									</f:header>
+									<f:content>
+										<VBox class="sapUiSmallMargin">
+											<Label text="{i18n>Email}"/>
+											<Link text="{EmployeeState>Email}" class="sapUiTinyMarginBottom"/>
+											<Label text="{i18n>ReportsTo}"/>
+											<Text text="{EmployeeState>Manager/FirstName} {EmployeeState>Manager/LastName}" class="sapUiSmallMarginBottom"/>
+											<Label text="{i18n>AttendingNextEvent}"/>
+											<Text text="{EmployeeState>NextEvent}" class="sapUiSmallMarginBottom"/>
+											<Label text="{i18n>AdministrationDetails}"/>
+											<HBox>
+												<Button icon="sap-icon://sales-order" press=".onShowOrders" type="Transparent"/>
+												<Button icon="sap-icon://locate-me" type="Transparent"/>
+											</HBox>
+										</VBox>
+									</f:content>
+								</f:Card>
+							</items>
+						</FlexBox>
+					</f:GridListItem>
+				</f:GridList>
+			</Panel>
 		</content>
 	</Page>
 </mvc:View>

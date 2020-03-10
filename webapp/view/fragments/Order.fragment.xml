@@ -1,3 +1,7 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
-	
+	<SelectDialog noDataText="{i18n>NoOrdersFound}"
+		title="{i18n>availableOrders} {EmployeeState>/oSelectedEmployee/FirstName} {EmployeeState>/oSelectedEmployee/LastName}"
+		search="handleSearch" confirm="onOrderSelect" cancel="onClose" items="{ path: 'EmployeeState>/oSelectedEmployee/Orders' }">
+		<StandardListItem title="{EmployeeState>ShipName}" description="{EmployeeState>OrderID}"/>
+	</SelectDialog>
 </core:FragmentDefinition>

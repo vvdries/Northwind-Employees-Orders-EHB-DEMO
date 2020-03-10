@@ -17,6 +17,10 @@
 					"odataVersion": "2.0",
 					"localUri": "localService/metadata.xml"
 				}
+			},
+			"employeeService": {
+				"uri": "model/employees.json",
+				"type": "JSON"
 			}
 		},
 		"sourceTemplate": {
@@ -76,6 +80,10 @@
 					"defaultOperationMode": "Server",
 					"useBatch": false
 				}
+			},
+			"employeeModel": {
+				"type": "sap.ui.model.json.JSONModel",
+				"dataSource": "employeeService"
 			}
 		},
 		"resources": {
